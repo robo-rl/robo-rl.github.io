@@ -49,9 +49,9 @@
             <h2 class="title is-2 publication-title">SLAC: Simulation-Pretrained Latent Action Space for Real-World Policy Learning</h2>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
-              <span class="author-block">
+              <!-- <span class="author-block">
                 Anonymous Authors
-              </span>
+              </span> -->
             </div>
           </div>
         </div>
@@ -62,10 +62,10 @@
   <!-- Youtube video -->
   <section class="hero is-small is-light">
     <div class="hero-body">
-      <div class="container">
+      <div class="container is-max-desktop">
         <!-- <h2 class="title is-3" style="text-align: center;">Video</h2> -->
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
+        <div class="columns is-centered">
+          <div class="column">
             <div class="publication-video">
               <iframe src="https://www.youtube.com/embed/NBT7YlFzKUI?si=_tthgplycN6T3yDB" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
@@ -77,7 +77,7 @@
   <!-- End youtube video -->
 
   <section class="section hero">
-    <div class="container">
+    <div class="container is-max-desktop">
       <h2 class="title is-2" style="text-align: center;">Overview</h2>
       <div class="columns is-centered">
         <div class="column is-four-fifths is-centered has-text-centered">
@@ -99,6 +99,71 @@
               Notably, SLAC learns contact-rich whole-body tasks in under an hour of real-world interactions,
               without relying on any demonstrations or hand-crafted behavior priors.
             </p>
+          </div>
+          <!-- Your image here -->
+          <img src="static/images/pull.png" width="100%"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2" style="text-align: center;">Method Overview</h2>
+      <div class="columns is-centered">
+        <div class="column is-four-fifths is-centered has-text-centered">
+          <div class="content has-text-justified">
+            <p>
+              SLAC consists of two key stages: (1) simulation-based pretraining of a latent action space, and (2) real-world policy learning using this pretrained action space.
+              The latent action space is designed to facilitate efficient real-world learning by providing temporal abstraction, disentanglement, and safety constraints.
+            </p>
+          </div>
+
+          <h3 class="title is-4">Stage 1: Simulation Pretraining</h3>
+          <div class="content has-text-justified">
+            <p>
+              In the first stage, SLAC leverages a low-fidelity simulator to learn a task-agnostic latent action space.
+              This is achieved through an unsupervised skill discovery process that:
+            </p>
+            <ul style="text-align: left;">
+              <li>Learns temporally extended primitives to reduce the exploration burden</li>
+              <li>Enforces disentanglement between different motion dimensions</li>
+              <li>Incorporates safety constraints to prevent dangerous behaviors</li>
+            </ul>
+          </div>
+          <!-- Placeholder for simulation pretraining video/animation -->
+          <div class="publication-video">
+            <!-- Add video iframe here -->
+          </div>
+
+          <h3 class="title is-4">Stage 2: Real-World Learning</h3>
+          <div class="content has-text-justified">
+            <p>
+              The second stage uses the pretrained latent action space as an interface for real-world policy learning.
+              SLAC employs a novel off-policy RL algorithm that:
+            </p>
+            <ul style="text-align: left;">
+              <li>Efficiently explores using the structured latent space</li>
+              <li>Leverages the safety constraints from pretraining</li>
+              <li>Adapts to real-world dynamics without requiring perfect simulation</li>
+            </ul>
+          </div>
+          <!-- Placeholder for real-world learning video/animation -->
+          <div class="publication-video">
+            <!-- Add video iframe here -->
+          </div>
+
+          <h3 class="title is-4">Key Benefits</h3>
+          <div class="content has-text-justified">
+            <p>
+              This two-stage approach offers several advantages:
+            </p>
+            <ul style="text-align: left;">
+              <li>Reduces real-world interaction time by learning core behaviors in simulation</li>
+              <li>Maintains safety during exploration through constrained primitives</li>
+              <li>Enables learning complex tasks without demonstrations or hand-crafted priors</li>
+              <li>Bridges the reality gap through adaptive policy learning</li>
+            </ul>
           </div>
           <!-- Your image here -->
           <img src="static/images/pull.png" width="100%"/>
