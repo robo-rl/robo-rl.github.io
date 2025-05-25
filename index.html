@@ -13,7 +13,6 @@
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/> -->
 
-
   <!-- <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
   <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG"> -->
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
@@ -23,18 +22,15 @@
   <!-- <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
   <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 
-
   <title>SLAC</title>
   <link rel="icon" type="image/x-icon" href="static/images/brain.ico">
-  <!-- <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" -->
-  <!-- rel="stylesheet"> -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet"> -->
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -45,8 +41,6 @@
   <script src="static/js/index.js"></script>
 </head>
 <body>
-
-
   <section class="hero is-light">
     <div class="hero-body">
       <div class="container is-max-desktop">
@@ -59,296 +53,237 @@
                 Anonymous Authors
               </span>
             </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- <h2 class="title is-3" style="text-align: center;">Video</h2> -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <div class="publication-video">
-            <iframe src="https://www.youtube.com/embed/NBT7YlFzKUI?si=_tthgplycN6T3yDB"  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- End youtube video -->
+  </section>
 
-
-<section class="section hero">
-  <div class="container">
-    <h2 class="title is-2" style="text-align: center;">Overview</h2>
-    <div class="columns is-centered">
-      <div class="column is-four-fifths is-centered has-text-centered">
-        <div class="content has-text-justified">
-          <p>
-            Building capable household and industrial robots requires mastering the control of versatile,
-            high-degree-of-freedom (DoF) systems such as mobile manipulators.
-            While reinforcement learning (RL) holds promise for autonomously acquiring robot control policies,
-            scaling it to high-DoF embodiments remains challenging.
-            Direct RL in the real world demands both safe exploration and high sample efficiency,
-            which are difficult to achieve in practice. Sim-to-real RL, on the other hand,
-            is often brittle due to the reality gap. This paper introduces SLAC,
-            a method that renders real-world RL feasible for complex embodiments by leveraging a
-            low-fidelity simulator to pretrain a task-agnostic latent action space.
-            SLAC trains this latent action space via a customized unsupervised skill discovery method designed to promote temporal abstraction,
-            disentanglement, and safety, thereby facilitating efficient downstream learning. Once a latent action space is learned,
-            SLAC uses it as the action interface for a novel off-policy RL algorithm to autonomously learn downstream tasks through real-world interactions.
-            We evaluate SLAC against existing methods on a suite of bimanual mobile manipulation tasks, where it achieves state-of-the-art performance.
-            Notably, SLAC learns contact-rich whole-body tasks in under an hour of real-world interactions,
-            without relying on any demonstrations or hand-crafted behavior priors.
-          </p>
+  <!-- Youtube video -->
+  <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container">
+        <!-- <h2 class="title is-3" style="text-align: center;">Video</h2> -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <div class="publication-video">
+              <iframe src="https://www.youtube.com/embed/NBT7YlFzKUI?si=_tthgplycN6T3yDB" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+          </div>
         </div>
-        <!-- Your image here -->
-        <img src="static/images/pull.png" width="100%"/>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+  <!-- End youtube video -->
 
-
-<section class="section hero  is-light">
-    <div class="container is-max-desktop">
-        <div class="columns is-centered">
-            <div class="column is-full-width">
-              <h2 class="title is-3 has-text-centered">SLAC Real-World Training</h2>
-                <p>In this video, we show one full training run for the board wiping task.
-                   The learned SLAC latent action space enables the robot to effectively explore the environment.
-                    Within 40 minutes of autonomous interactions, the robot learns
-                    to reliable wipe the whiteboard.  </p>
-
-                <div class="publication-video">
-                    <iframe src="https://www.youtube.com/embed/mmLUsGoK28Y?si=3HnNBaYGi74laMWz"  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                </div>
+  <section class="section hero">
+    <div class="container">
+      <h2 class="title is-2" style="text-align: center;">Overview</h2>
+      <div class="columns is-centered">
+        <div class="column is-four-fifths is-centered has-text-centered">
+          <div class="content has-text-justified">
+            <p>
+              Building capable household and industrial robots requires mastering the control of versatile,
+              high-degree-of-freedom (DoF) systems such as mobile manipulators.
+              While reinforcement learning (RL) holds promise for autonomously acquiring robot control policies,
+              scaling it to high-DoF embodiments remains challenging.
+              Direct RL in the real world demands both safe exploration and high sample efficiency,
+              which are difficult to achieve in practice. Sim-to-real RL, on the other hand,
+              is often brittle due to the reality gap. This paper introduces SLAC,
+              a method that renders real-world RL feasible for complex embodiments by leveraging a
+              low-fidelity simulator to pretrain a task-agnostic latent action space.
+              SLAC trains this latent action space via a customized unsupervised skill discovery method designed to promote temporal abstraction,
+              disentanglement, and safety, thereby facilitating efficient downstream learning. Once a latent action space is learned,
+              SLAC uses it as the action interface for a novel off-policy RL algorithm to autonomously learn downstream tasks through real-world interactions.
+              We evaluate SLAC against existing methods on a suite of bimanual mobile manipulation tasks, where it achieves state-of-the-art performance.
+              Notably, SLAC learns contact-rich whole-body tasks in under an hour of real-world interactions,
+              without relying on any demonstrations or hand-crafted behavior priors.
+            </p>
+          </div>
+          <!-- Your image here -->
+          <img src="static/images/pull.png" width="100%"/>
         </div>
+      </div>
     </div>
+  </section>
+
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3 has-text-centered">SLAC Real-World Training</h2>
+          <p>
+            In this video, we show one full training run for the board wiping task.
+            The learned SLAC latent action space enables the robot to effectively explore the environment.
+            Within 40 minutes of autonomous interactions, the robot learns
+            to reliable wipe the whiteboard.
+          </p>
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/mmLUsGoK28Y?si=3HnNBaYGi74laMWz" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-
-  <section class="section hero ">
+  <section class="section hero">
     <div class="container is-max-desktop">
       <div class="grid-container-one-no-box">
-          <h2 class="title is-3 has-text-centered">Real-World Results</h2>
-          <h2 class="title is-4">Policies Visualization</h2>
-                <p>
-                    The SLAC framework does not require any demonstrations or hand-crafted behavior priors, and can be easily applied to a variety of tasks.
-                    We test SLAC on a suite of <strong> contact-rich, visuomotor </strong> bimanual mobile manipulation tasks, and show learned policies below.
-                </p>
-                <div class="grid-item">
-                    <div class="card-static-container">
-                        <div class="card-container">
-                            <div class="card-wide">
-                                <div class="card-video">
-                                    <iframe id="board"
-                                        width="100%"
-                                        height="280px"
-                                        src="https://www.youtube.com/embed/j7eYAJqAxaA?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen>
-                                    </iframe>
-                                </div>
-                                <div class="card-content">
-                                    <h3><strong>Wipe a Whiteboard</strong></h3>
-                                    <p>SLAC policy continuously wipe a whiteboard by
-                                        simultaneously moving its arms and base, while utilizing its active camera to keep track of the mark.</p>
-                                </div>
-                            </div>
-
-                            <div class="card-wide">
-                                <div class="card-video">
-                                    <iframe id="obs"
-                                        width="100%"
-                                        height="280px"
-                                        src="https://www.youtube.com/embed/91dHyTkHH2g?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen>
-                                    </iframe>
-                                </div>
-                                <div class="card-content">
-                                    <h3><strong>Wipe over Obstacle</strong></h3>
-                                    <p>SLAC policy learns to position its base such that it will not collide with the obstacle.
-                                        In the meantime, it succecsfully wipes the mark on the whiteboard.</p>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                    </div>
+        <h2 class="title is-3 has-text-centered">Real-World Results</h2>
+        <h2 class="title is-4">Policies Visualization</h2>
+        <p>
+          The SLAC framework does not require any demonstrations or hand-crafted behavior priors, and can be easily applied to a variety of tasks.
+          We test SLAC on a suite of <strong>contact-rich, visuomotor</strong> bimanual mobile manipulation tasks, and show learned policies below.
+        </p>
+        <div class="grid-item">
+          <div class="card-static-container">
+            <div class="card-container">
+              <div class="card-wide">
+                <div class="card-video">
+                  <iframe id="board"
+                    width="100%"
+                    height="280px"
+                    src="https://www.youtube.com/embed/j7eYAJqAxaA?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                  </iframe>
                 </div>
-
-            <div class="grid-item">
-                <div class="card-static-container">
-                    <div class="card-container">
-
-                        <div class="card-wide">
-                            <div class="card-video">
-                                <iframe
-                                    width="100%"
-                                    height="280px"
-                                    src="https://www.youtube.com/embed/azvZwjmmXTU?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen>
-                                </iframe>
-                            </div>
-                            <div class="card-content">
-                                <h3><strong>Push to Tray</strong></h3>
-                                <p>SLAC policy learns to use the broom in hand to push trash on the table into a tray.</p>
-                            </div>
-                        </div>
-
-                        <div class="card-wide">
-                            <div class="card-video">
-                                <iframe id="bag"
-                                    width="100%"
-                                    height="280px"
-                                    src="https://www.youtube.com/embed/18NYM-knLt8?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen>
-                                </iframe>
-                            </div>
-                            <div class="card-content">
-                                <h3><strong>Sweep into Bag</strong></h3>
-                                <p>SLAC learns to sweep trash off the table, while using a bag in the other hand to catch the trash.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="card-content">
+                  <h3><strong>Wipe a Whiteboard</strong></h3>
+                  <p>SLAC policy continuously wipe a whiteboard by simultaneously moving its arms and base, while utilizing its active camera to keep track of the mark.</p>
                 </div>
-            </div>
-
-            </div>
-
-
-    <div class="container is-max-desktop">
-      <h2 class="title is-4" id="Simulation examples">Additional Visualization</h2>
-
-            <!-- SLAC EXPLORE -->
-      <div class="columns is-centered">
-        <div class="column is-two-fifths">
-          <div class="card-mid">
-
-                    <div class="card-content">
-                        <div class="image-grid-part">
-                          <iframe
-                            src="static/images/table.mp4"
-                            style="width: 100%;aspect-ratio: 4/3;"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
-                        <iframe
-                            src="static/images/board.mp4"
-                            style="width: 100%;aspect-ratio: 4/3;"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
-                        </div>
-                        <h3><strong>Learned Latent Action Space</strong></h3>
-                        <p>Here, we visualize the learned latent action space by randomly sampling latent actions and visualizing the behavior in simulation.</p>
-                    </div>
-          </div>
-        </div>
-        <div class="column is-two-fifths">
-          <div class="card-mid">
-            <div class="card-content">
-              <div class="image-grid-part">
-                <img src="static/images/particle.gif"  style="border: 2px solid black; width: 75%;">
-                <img src="static/images/particle.jpg"  style="width: 100%;">
               </div>
-              <h3><strong>Particle Domain</strong></h3>
-                <p> SLAC can be applied to a variety of domains. Here we show the result of applying SLAC to a multi-agent domain.</p>
+
+              <div class="card-wide">
+                <div class="card-video">
+                  <iframe id="obs"
+                    width="100%"
+                    height="280px"
+                    src="https://www.youtube.com/embed/91dHyTkHH2g?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                  </iframe>
+                </div>
+                <div class="card-content">
+                  <h3><strong>Wipe over Obstacle</strong></h3>
+                  <p>SLAC policy learns to position its base such that it will not collide with the obstacle. In the meantime, it succecsfully wipes the mark on the whiteboard.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-item">
+          <div class="card-static-container">
+            <div class="card-container">
+              <div class="card-wide">
+                <div class="card-video">
+                  <iframe
+                    width="100%"
+                    height="280px"
+                    src="https://www.youtube.com/embed/azvZwjmmXTU?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                  </iframe>
+                </div>
+                <div class="card-content">
+                  <h3><strong>Push to Tray</strong></h3>
+                  <p>SLAC policy learns to use the broom in hand to push trash on the table into a tray.</p>
+                </div>
+              </div>
+
+              <div class="card-wide">
+                <div class="card-video">
+                  <iframe id="bag"
+                    width="100%"
+                    height="280px"
+                    src="https://www.youtube.com/embed/18NYM-knLt8?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                  </iframe>
+                </div>
+                <div class="card-content">
+                  <h3><strong>Sweep into Bag</strong></h3>
+                  <p>SLAC learns to sweep trash off the table, while using a bag in the other hand to catch the trash.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-
-    </div>
-
-
-    </div>
-</section>
-
-
-
-
-<section class="section hero ">
-  <div class="container is-max-desktop">
-      <h2 class="title is-4" id="Simulation examples">Quantitative Results</h2>
-<!--    <h2 class="title is-2" style="text-align: center;">Quantitative Results</h2>-->
-    <div class="columns is-centered">
-      <div class="column is-max-desktop is-centered has-text-centered">
-                <!-- Your image here -->
-                  <div class="content has-text-justified">
-          <p>
-              SLAC achieves state-of-the-art performance both in learning efficacy and in safety.
-          </p>
+      <div class="container is-max-desktop">
+        <h2 class="title is-4">Additional Visualization</h2>
+        <div class="columns is-centered">
+          <div class="column is-two-fifths">
+            <div class="card-mid">
+              <div class="card-content">
+                <div class="image-grid-part">
+                  <iframe
+                    src="static/images/table.mp4"
+                    style="width: 100%;aspect-ratio: 4/3;"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                  </iframe>
+                  <iframe
+                    src="static/images/board.mp4"
+                    style="width: 100%;aspect-ratio: 4/3;"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                  </iframe>
+                </div>
+                <h3><strong>Learned Latent Action Space</strong></h3>
+                <p>Here, we visualize the learned latent action space by randomly sampling latent actions and visualizing the behavior in simulation.</p>
+              </div>
+            </div>
+          </div>
+          <div class="column is-two-fifths">
+            <div class="card-mid">
+              <div class="card-content">
+                <div class="image-grid-part">
+                  <img src="static/images/particle.gif" style="border: 2px solid black; width: 75%;">
+                  <img src="static/images/particle.jpg" style="width: 100%;">
+                </div>
+                <h3><strong>Particle Domain</strong></h3>
+                <p>SLAC can be applied to a variety of domains. Here we show the result of applying SLAC to a multi-agent domain.</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <img src="static/images/result.png" width="90%"/>
-
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-<!-- Paper poster -->
-<!-- <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
+  <section class="section hero">
+    <div class="container is-max-desktop">
+      <h2 class="title is-4" id="Simulation examples">Quantitative Results</h2>
+      <div class="columns is-centered">
+        <div class="column is-max-desktop is-centered has-text-centered">
+          <div class="content has-text-justified">
+            <p>
+              SLAC achieves state-of-the-art performance both in learning efficacy and in safety.
+            </p>
+          </div>
+          <img src="static/images/result.png" width="90%"/>
+        </div>
       </div>
     </div>
-  </section> -->
-<!--End paper poster -->
-
-
-<!--BibTex citation -->
-<!--   <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>
-      </code></pre>
-    </div>
-</section> -->
-<!--End BibTex citation -->
-
+  </section>
 
   <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
-          </p>
-
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
-
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
+  </footer>
+</body>
+</html>
