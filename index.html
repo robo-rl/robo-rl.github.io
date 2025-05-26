@@ -39,6 +39,61 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Create an Intersection Observer for YouTube iframes
+      const youtubeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const iframe = entry.target;
+            const currentSrc = iframe.src;
+            if (!currentSrc.includes('autoplay=1')) {
+              const baseUrl = currentSrc.split('?')[0];
+              iframe.src = `${baseUrl}?autoplay=1&mute=1&playsinline=1&modestbranding=1`;
+            }
+          } else {
+            const iframe = entry.target;
+            const currentSrc = iframe.src;
+            if (currentSrc.includes('autoplay=1')) {
+              const baseUrl = currentSrc.split('?')[0];
+              iframe.src = `${baseUrl}?mute=1&playsinline=1&modestbranding=1`;
+            }
+          }
+        });
+      }, {
+        threshold: 0.5
+      });
+
+      // Create an Intersection Observer for local MP4 videos
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.play().catch(function(error) {
+              console.log("Video play failed:", error);
+            });
+          } else {
+            entry.target.pause();
+          }
+        });
+      }, {
+        threshold: 0.5
+      });
+
+      // Observe all YouTube iframes (both in publication-video and card-video)
+      document.querySelectorAll('.publication-video iframe, .card-video iframe').forEach(video => {
+        youtubeObserver.observe(video);
+      });
+
+      // Observe all local MP4 videos
+      document.querySelectorAll('video').forEach(video => {
+        // Set video attributes
+        video.muted = true;
+        video.playsInline = true;
+        video.loop = true;
+        videoObserver.observe(video);
+      });
+    });
+  </script>
 </head>
 <body>
   <section class="hero is-light">
@@ -67,7 +122,7 @@
         <div class="columns is-centered">
           <div class="column">
             <div class="publication-video">
-              <iframe src="https://www.youtube.com/embed/NBT7YlFzKUI?si=_tthgplycN6T3yDB" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/NBT7YlFzKUI" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
         </div>
@@ -78,7 +133,7 @@
 
   <section class="section hero">
     <div class="container is-max-desktop">
-      <h2 class="title is-2" style="text-align: center;">Overview</h2>
+      <h2 class="title is-2" style="text-align: center;">Abstract</h2>
       <div class="columns is-centered">
         <div class="column is-four-fifths is-centered has-text-centered">
           <div class="content has-text-justified">
@@ -134,6 +189,13 @@
           <!-- Placeholder for simulation pretraining video/animation -->
           <div class="publication-video">
             <!-- Add video iframe here -->
+            <video
+              src="static/videos/website_videos2_low_res.mp4"
+              style="width: 100%;aspect-ratio: 4/3;"
+              muted
+              playsinline
+              loop>
+            </video>
           </div>
 
           <h3 class="title is-4">Stage 2: Real-World Learning</h3>
@@ -184,7 +246,7 @@
             to reliable wipe the whiteboard.
           </p>
           <div class="publication-video">
-            <iframe src="https://www.youtube.com/embed/mmLUsGoK28Y?si=3HnNBaYGi74laMWz" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/mmLUsGoK28Y" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -205,11 +267,12 @@
             <div class="card-container">
               <div class="card-wide">
                 <div class="card-video">
-                  <iframe id="board"
+                  <iframe
+                    src="https://www.youtube.com/embed/j7eYAJqAxaA"
                     width="100%"
                     height="280px"
-                    src="https://www.youtube.com/embed/j7eYAJqAxaA?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    frameborder="0"
+                    allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
                   </iframe>
                 </div>
@@ -221,11 +284,12 @@
 
               <div class="card-wide">
                 <div class="card-video">
-                  <iframe id="obs"
+                  <iframe
+                    src="https://www.youtube.com/embed/91dHyTkHH2g"
                     width="100%"
                     height="280px"
-                    src="https://www.youtube.com/embed/91dHyTkHH2g?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    frameborder="0"
+                    allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
                   </iframe>
                 </div>
@@ -244,10 +308,11 @@
               <div class="card-wide">
                 <div class="card-video">
                   <iframe
+                    src="https://www.youtube.com/embed/azvZwjmmXTU"
                     width="100%"
                     height="280px"
-                    src="https://www.youtube.com/embed/azvZwjmmXTU?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    frameborder="0"
+                    allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
                   </iframe>
                 </div>
@@ -259,11 +324,12 @@
 
               <div class="card-wide">
                 <div class="card-video">
-                  <iframe id="bag"
+                  <iframe
+                    src="https://www.youtube.com/embed/18NYM-knLt8"
                     width="100%"
                     height="280px"
-                    src="https://www.youtube.com/embed/18NYM-knLt8?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    frameborder="0"
+                    allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
                   </iframe>
                 </div>
@@ -312,20 +378,20 @@
             <div class="card-mid">
               <div class="card-content">
                 <div class="image-grid-part">
-                  <iframe
+                  <video
                     src="static/images/table.mp4"
                     style="width: 100%;aspect-ratio: 4/3;"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                  </iframe>
-                  <iframe
+                    muted
+                    playsinline
+                    loop>
+                  </video>
+                  <video
                     src="static/images/board.mp4"
                     style="width: 100%;aspect-ratio: 4/3;"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                  </iframe>
+                    muted
+                    playsinline
+                    loop>
+                  </video>
                 </div>
                 <h3><strong>Learned Latent Action Space</strong></h3>
                 <p>Here, we visualize the learned latent action space by randomly sampling latent actions and visualizing the behavior in simulation.</p>
