@@ -174,55 +174,58 @@
 
   <section class="section hero">
     <div class="container is-max-desktop">
-      <h2 class="title is-2" style="text-align: center;">Method Overview</h2>
+      <h2 class="title is-2" style="text-align: center;">Overview</h2>
       <div class="columns is-centered">
         <div class="column is-four-fifths is-centered has-text-centered">
           <div class="content has-text-justified">
             <p>
-              SLAC consists of two key stages: (1) simulation-based pretraining of a latent action space, and (2) real-world policy learning using this pretrained action space.
-              The latent action space is designed to facilitate efficient real-world learning by providing temporal abstraction, disentanglement, and safety constraints.
+              Real-world reinforcement learning (RL) is extremely challenging for high degree-of-freedom robots like bimanual mobile manipulators, due to issues of sample inefficiency and safety. 
+              Our key idea: both sample efficiency and safety can be greatly facillitated by a good action space!
+              To this end, we introduce SLAC, a framework that makes real-world RL feasible for high-DoF robots through a learned latent action space.
+              SLAC consists of two steps: first, it leverages a low-fidelity simulator to pretrain a task-agnostic latent action space; then, it uses this space to drive real-world policy learning. 
             </p>
           </div>
 
-          <h3 class="title is-4">Stage 1: Simulation Pretraining</h3>
+          <h3 class="title is-4">Step 1: Latent Action Space Learning in Simulation</h3>
           <div class="content has-text-justified">
             <p>
-              In the first stage, SLAC leverages a low-fidelity simulator to learn a task-agnostic latent action space.
-              This is achieved through an unsupervised skill discovery process that:
+              How can we learn a good latent action space that allows us to efficiently handle different downstream tasks?
+              Unsupervised Skill Discovery (USD) provides an elegant solution, through maximizing the empowerment of the latent action space.
+              However, USD often requires a large number of samples to converge, which is not practical to run on a real robot.
+              But we do not necessarily have to run USD on a real robot!
+              Instead, SLAC leverages a low-fidelity simulator for USD.
+              Even if there is a reality gap, the learned latent action space can still be used to drive real-world policy learning as long as it has enough converage.
+              Specifically, SLAC designs a novel USD objective with the following properties:
             </p>
             <ul style="text-align: left;">
-              <li>Learns temporally extended primitives to reduce the exploration burden</li>
-              <li>Enforces disentanglement between different motion dimensions</li>
+              <li>Learns temporally extended latent actions to reduce the exploration burden</li>
+              <li>Enforces disentanglement between different latent dimensions to handle complex tasks</li>
               <li>Incorporates safety constraints to prevent dangerous behaviors</li>
             </ul>
+            <p>
+              These objectives are optimized through the following pipeline:
+            </p>
           </div>
-          <!-- Placeholder for simulation pretraining video/animation -->
-          <div class="publication-video">
-            <!-- Add video iframe here -->
+          <div class="publication-video" style="margin-top: -1rem; margin-bottom: 1rem;">
             <video
               src="static/videos/pipeline_1_low_res.mp4"
-              style="width: 100%;aspect-ratio: 4/3;"
+              style="width: 100%;aspect-ratio: 16/9;"
               class="no-loop"
               muted
               playsinline>
             </video>
           </div>
 
-          <h3 class="title is-4">Stage 2: Real-World Learning</h3>
+          <h3 class="title is-4">Step 2: Real-World RL in the Learned Action Space</h3>
           <div class="content has-text-justified">
             <p>
-              The second stage uses the pretrained latent action space as an interface for real-world policy learning.
-              SLAC employs a novel off-policy RL algorithm that:
+              Once the latent action space is learned, SLAC trains a downstream policy in the learned action space.
+              Specifically, we derive a novel off-policy RL algorithm on top of Soft Actor-Critic that handles discrete action space 
+              and can leverage the dependencies between reward terms and latent action dimensions to decompose the RL training into parallel but easier sub-problems, thereby greatly reducing the sample complexity.
+              We show the pipeline for downstream policy learning below:
             </p>
-            <ul style="text-align: left;">
-              <li>Efficiently explores using the structured latent space</li>
-              <li>Leverages the safety constraints from pretraining</li>
-              <li>Adapts to real-world dynamics without requiring perfect simulation</li>
-            </ul>
           </div>
-          <!-- Placeholder for real-world learning video/animation -->
-          <div class="publication-video">
-            <!-- Add video iframe here -->
+          <div class="publication-video" style="margin-top: -1rem; margin-bottom: 1rem;">
             <video
               src="static/videos/website_videos2_low_res.mp4"
               style="width: 100%;aspect-ratio: 4/3;"
@@ -232,18 +235,6 @@
             </video>
           </div>
 
-          <h3 class="title is-4">Key Benefits</h3>
-          <div class="content has-text-justified">
-            <p>
-              This two-stage approach offers several advantages:
-            </p>
-            <ul style="text-align: left;">
-              <li>Reduces real-world interaction time by learning core behaviors in simulation</li>
-              <li>Maintains safety during exploration through constrained primitives</li>
-              <li>Enables learning complex tasks without demonstrations or hand-crafted priors</li>
-              <li>Bridges the reality gap through adaptive policy learning</li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>
