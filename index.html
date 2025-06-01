@@ -111,7 +111,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h2 class="title is-2 publication-title">SLAC: Simulation-Pretrained Latent Action Space for Real-World Policy Learning</h2>
+            <h2 class="title is-2 publication-title">SLAC: Simulation-Pretrained Latent Action Space for Whole-Body Real-World RL</h2>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <!-- <span class="author-block">
@@ -128,7 +128,27 @@
   <section class="hero is-small is-light">
     <div class="hero-body">
       <div class="container is-max-desktop">
-        <!-- <h2 class="title is-3" style="text-align: center;">Video</h2> -->
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <div class="content has-text-justified">
+              <br>
+              <br>
+              <p class="is-size-5">
+                Learning tasks in the real world with reinforcement learning (RL) is very challenging, especially for complex robots such as bimanual mobile manipulators. 
+                The high-dimensional, unconstrained action spaces worsen the already poor RL sample efficiency and raise significant safety concerns because naive exploration can easily damage the robot or its environment. 
+                <br>
+                <br>
+                We address this problem with a powerful insight: both sample efficiency and safety can be dramatically improved by operating in the right action space, one that can be pre-learned entirely in simulation.   
+              </p>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h2 class="title is-3" style="text-align: center;">Summary Video</h2>
         <div class="columns is-centered">
           <div class="column">
             <div class="publication-video">
@@ -136,6 +156,7 @@
             </div>
           </div>
         </div>
+        <br>
       </div>
     </div>
   </section>
@@ -173,14 +194,13 @@
 
   <section class="section hero">
     <div class="container is-max-desktop">
-      <h2 class="title is-2" style="text-align: center;">Overview</h2>
+      <h2 class="title is-2" style="text-align: center;">Two-Step SLAC Procedure</h2>
       <div class="columns is-centered">
         <div class="column is-four-fifths is-centered has-text-centered">
           <div class="content has-text-justified">
             <p>
-              Real-world reinforcement learning (RL) is extremely challenging for high degree-of-freedom robots like bimanual mobile manipulators, due to issues of sample inefficiency and safety. 
-              Our key idea: both sample efficiency and safety can be greatly facillitated by a good action space!
-              To this end, we introduce SLAC, a framework that makes real-world RL feasible for high-DoF robots through a learned latent action space.
+           
+              We introduce SLAC, a framework that makes real-world RL feasible for high-DoF robots through a learned latent action space.
               SLAC consists of two steps: first, it leverages a low-fidelity simulator to pretrain a task-agnostic latent action space; then, it uses this space to drive real-world policy learning. 
             </p>
             <img src="static/images/pull.png" width="100%"/>
@@ -196,7 +216,7 @@
               <br>
               But we do not necessarily have to run USD on a real robot!
               Instead, SLAC leverages a low-fidelity simulator for USD.
-              Even if there is a reality gap, the learned latent action space can still be used to drive real-world policy learning as long as it has enough converage.
+              Even if there is a reality gap, the learned latent action space can still be used to drive real-world policy learning as long as it has enough coverage.
               Specifically, SLAC designs a novel USD objective that encourages temporally extended, disentangled, and safe latent actions, through the following pipeline:
             </p>
             <!-- <ul style="text-align: left;">
@@ -279,7 +299,6 @@
                     src="https://www.youtube.com/embed/j7eYAJqAxaA"
                     width="100%"
                     height="280px"
-                    class="no-autoplay"
                     frameborder="0"
                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
@@ -297,7 +316,6 @@
                     src="https://www.youtube.com/embed/91dHyTkHH2g"
                     width="100%"
                     height="280px"
-                    class="no-autoplay"
                     frameborder="0"
                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
@@ -321,7 +339,6 @@
                     src="https://www.youtube.com/embed/azvZwjmmXTU"
                     width="100%"
                     height="280px"
-                    class="no-autoplay"
                     frameborder="0"
                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
@@ -339,7 +356,6 @@
                     src="https://www.youtube.com/embed/18NYM-knLt8"
                     width="100%"
                     height="280px"
-                    class="no-autoplay"
                     frameborder="0"
                     allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
@@ -386,7 +402,7 @@
         <h2 class="title is-4">Additional Visualization</h2>
         <p>
           Finally, we show some additional visualization for our experiments, 
-          including visualizations of the learned latent actions space, and visualizations of SLAC's performance on a non-robotics particle domain. 
+          including visualizations of the learned latent action space, and visualizations of SLAC's performance on a non-robotics particle domain. 
         </p>
       </div>
 
