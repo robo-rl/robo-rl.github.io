@@ -399,39 +399,49 @@
   <section class="section hero"> -->
     <div class="container is-max-desktop">
       <div class="grid-container-one-no-box">
-        <h2 class="title is-4">Additional Visualization</h2>
-        <p>
-          Finally, we show some additional visualization for our experiments, 
-          including visualizations of the learned latent action space, and visualizations of SLAC's performance on a non-robotics particle domain. 
-        </p>
-      </div>
-
-      <div class="container is-max-desktop">
+        <h2 class="title is-3">Learned Latent Actions Visualization</h2>
+        <div class="content has-text-justified">
+          <p>
+            To better understand what SLAC learns during the simulation pretraining phase, we visualize the learned latent actions below.
+            Each video shows the robot executing a sequence of different latent actions sampled from our learned latent action space.
+            Notice how the actions are temporally extended, diverse, and safe - the robot never collides with itself or the environment.
+            These properties are crucial for efficient downstream learning.
+          </p>
+        </div>
         <div class="columns is-centered">
-          <div class="column is-two-fifths">
-            <div class="card-mid">
-              <div class="card-content">
-                <div class="image-grid-part">
-                  <video
-                    src="static/images/table.mp4"
-                    style="width: 100%;aspect-ratio: 4/3;"
-                    muted
-                    playsinline
-                    loop>
-                  </video>
-                  <video
-                    src="static/images/board.mp4"
-                    style="width: 100%;aspect-ratio: 4/3;"
-                    muted
-                    playsinline
-                    loop>
-                  </video>
-                </div>
-                <h3><strong>Learned Latent Action Space</strong></h3>
-                <p>Here, we visualize the learned latent action space by randomly sampling latent actions and visualizing the behavior in simulation.</p>
+          <div class="column is-three-fifths">
+            <div style="display: flex; flex-direction: row; gap: 2rem; justify-content: center;">
+              <div style="flex: 1;">
+                <video
+                  src="static/images/table.mp4"
+                  style="width: 100%;aspect-ratio: 4/3;"
+                  muted
+                  playsinline
+                  loop>
+                </video>
+              </div>
+              <div style="flex: 1;">
+                <video
+                  src="static/images/board.mp4"
+                  style="width: 100%;aspect-ratio: 4/3;"
+                  muted
+                  playsinline
+                  loop>
+                </video>
               </div>
             </div>
           </div>
+        </div>
+
+        <h2 class="title is-3">SLAC Beyond Robotics</h2>
+        <div class="content has-text-justified">
+          <p>
+            While SLAC is primarily designed for robotics, its core principles can be applied to other domains with complex action spaces.
+            Here we demonstrate SLAC's effectiveness on a centralized multi-agent particle domain, where a centralized controller needs to simulateously control 
+            10 agents towards coordinated interactions with the landmarks. SLAC enables efficient downstream task learning on this challenging domain, outperforming previous state-of-the-art methods.
+          </p>
+        </div>
+        <div class="columns is-centered">
           <div class="column is-two-fifths">
             <div class="card-mid">
               <div class="card-content">
@@ -439,8 +449,6 @@
                   <img src="static/images/particle.gif" style="border: 2px solid black; width: 75%;">
                   <img src="static/images/particle.jpg" style="width: 100%;">
                 </div>
-                <h3><strong>Particle Domain</strong></h3>
-                <p>SLAC can be applied to a variety of domains. Here we show the result of applying SLAC to a multi-agent domain.</p>
               </div>
             </div>
           </div>
@@ -464,3 +472,4 @@
   </footer>
 </body>
 </html>
+
